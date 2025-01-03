@@ -2,22 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle_Project_.MainPage"
-             BackgroundColor="WhiteSmoke">
+             BackgroundColor="#252525">
 
     <VerticalStackLayout Spacing="25" 
                         Padding="30,0" 
                         VerticalOptions="Center">
         <Frame
-           BackgroundColor="LightGray" 
+           BackgroundColor="#9a9a9a" 
            CornerRadius="10" 
            Padding="20,10" 
            HorizontalOptions="Center"
-           BorderColor="Transparent">
+           BorderColor="#eeeeee">
             <Label 
             Text="WORDLE"
             SemanticProperties.HeadingLevel="Level1"
             FontSize="32"
-            TextColor="Black"
+            TextColor="#252525"
             FontAttributes="Bold"
             HorizontalOptions="Center"/>
         </Frame>
@@ -28,51 +28,51 @@
               HorizontalOptions="Center">
 
             <HorizontalStackLayout Grid.Row="0" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Row="1" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Row="2" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Row="3" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Row="4" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Row="5" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
-                <Button WidthRequest="50" HeightRequest="50" />
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
             </HorizontalStackLayout>
         </Grid>
 
@@ -83,44 +83,45 @@
 
             <!-- Top Row Keyboard -->
             <HorizontalStackLayout Grid.Row="0" Spacing="2">
-                <Button Text="Q" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="W" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="E" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="R" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="T" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="Y" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="U" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="I" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="O" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="P" WidthRequest="35" HeightRequest="45"/>
+                <Button Text="Q" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="W" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="E" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="R" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="T" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="Y" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="U" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="I" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="O" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="P" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
             <!-- Middle Row Keyboard -->
             <HorizontalStackLayout Grid.Row="1" Spacing="2" Margin="15,0">
-                <Button Text="A" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="S" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="D" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="F" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="G" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="H" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="J" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="K" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="L" WidthRequest="35" HeightRequest="45"/>
+                <Button Text="A" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="S" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="D" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="F" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="G" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="H" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="J" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="K" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="L" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
             <!-- Bottom Row Keyboard -->
             <HorizontalStackLayout Grid.Row="2" Spacing="2">
-                <Button Text="ENTER" WidthRequest="70.001" HeightRequest="45"/>
-                <Button Text="Z" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="X" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="C" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="V" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="B" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="N" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="M" WidthRequest="35" HeightRequest="45"/>
-                <Button Text="⌫" WidthRequest="65" HeightRequest="45"/>
+                <Button Text="ENTER" WidthRequest="70.001" HeightRequest="45" BackgroundColor="#9a9a9a"/>
+                <Button Text="Z" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="X" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="C" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="V" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="B" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="N" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="M" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+                <Button Text="⌫" WidthRequest="65" HeightRequest="45"  BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
             </HorizontalStackLayout>
         </Grid>
 
     </VerticalStackLayout>
 </ContentPage>
+
