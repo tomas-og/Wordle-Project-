@@ -10,7 +10,7 @@ namespace Wordle_Project_
         private int currentColumn = 0;
         private bool gameActive = true;
         private Label debugLabel;
-        private bool isDarkMode = true;
+
 
         public MainPage()
         {
@@ -171,120 +171,57 @@ namespace Wordle_Project_
             );
         }
 
-        //Theme code (Not working) Needs to be fixed (Settings button opens a new page with a button to change the theme instead of changing the theme on the current page)
-        private void ApplyTheme()
+        private async void OnSettingsButtonClicked(object sender, EventArgs e)
         {
-            var theme = isDarkMode ? GetDarkTheme() : GetLightTheme();
+            await Navigation.PushModalAsync(new SettingsPage(), true);
+        }
 
-            this.BackgroundColor = Color.FromArgb(theme.Background);
+        private async Task ResetGame()
+        {
+            // Reset game state
+            currentRow = 0;
+            currentColumn = 0;
+            gameActive = true;
 
-            foreach (var label in mainLayout.Children.OfType<Label>())
+            // Clear all grid buttons
+            foreach (var stackLayout in grid.Children.OfType<HorizontalStackLayout>())
             {
-                label.TextColor = Color.FromArgb(theme.TextColor);
-            }
-
-            foreach (HorizontalStackLayout row in grid.Children)
-            {
-                foreach (Button button in row.Children)
+                foreach (var button in stackLayout.Children.OfType<Button>())
                 {
-                    if (button.BackgroundColor.ToHex() == "#252525" ||
-                        button.BackgroundColor.ToHex() == "#ffffff")
-                    {
-                        button.BackgroundColor = Color.FromArgb(theme.Background);
-                        button.TextColor = Color.FromArgb(theme.TextColor);
-                        button.BorderColor = Color.FromArgb(theme.BorderColor);
-                    }
+                    button.Text = "";
+                    button.BackgroundColor = Color.FromArgb("#121213");
                 }
             }
 
-            var keyButtons = keyboardGrid.GetVisualTreeDescendants().OfType<Button>();
-            foreach (var button in keyButtons)
+            // Reset keyboard colors
+            foreach (var button in keyboardGrid.GetVisualTreeDescendants().OfType<Button>())
             {
-                if (button.BackgroundColor.ToHex() == "#9a9a9a" ||
-                    button.BackgroundColor.ToHex() == "#d3d6da")
+                if (button.Text != "ENTER" && button.Text != "⌫")
                 {
-                    button.BackgroundColor = Color.FromArgb(theme.KeyboardButton);
-                    button.TextColor = Color.FromArgb(theme.KeyboardText);
-                }
-            }
-        }
-
-        private Theme GetDarkTheme()
-        {
-            return new Theme
-            {
-                Background = "#252525",
-                TextColor = "#eeeeee",
-                BorderColor = "#3a3a3c",
-                KeyboardButton = "#9a9a9a",
-                KeyboardText = "#ffffff"
-            };
-        }
-
-        private Theme GetLightTheme()
-        {
-            return new Theme
-            {
-                Background = "#ffffff",
-                TextColor = "#000000",
-                BorderColor = "#d3d6da",
-                KeyboardButton = "#d3d6da",
-                KeyboardText = "#000000"
-            };
-        }
-
-        private class Theme
-        {
-            public string Background { get; set; }
-            public string TextColor { get; set; }
-            public string BorderColor { get; set; }
-            public string KeyboardButton { get; set; }
-            public string KeyboardText { get; set; }
-        }
-
-        //Button to change the theme
-        private void Themes()
-        {
-            var theme = isDarkMode ? GetDarkTheme() : GetLightTheme();
-
-            this.BackgroundColor = Color.FromArgb(theme.Background);
-
-            foreach (var label in mainLayout.Children.OfType<Label>())
-            {
-                label.TextColor = Color.FromArgb(theme.TextColor);
-            }
-
-            foreach (HorizontalStackLayout row in grid.Children)
-            {
-                foreach (Button button in row.Children)
-                {
-                    if (button.BackgroundColor.ToHex() == "#252525" ||
-                        button.BackgroundColor.ToHex() == "#ffffff")
-                    {
-                        button.BackgroundColor = Color.FromArgb(theme.Background);
-                        button.TextColor = Color.FromArgb(theme.TextColor);
-                        button.BorderColor = Color.FromArgb(theme.BorderColor);
-                    }
+                    button.BackgroundColor = Color.FromArgb("#818384");
                 }
             }
 
-            var keyButtons = keyboardGrid.GetVisualTreeDescendants().OfType<Button>();
-            foreach (var button in keyButtons)
+            // Get new word
+            await InitializeGame();
+        }
+
+        private async void OnNewGameClicked(object sender, EventArgs e)
+        {
+            if (!gameActive)
             {
-                if (button.BackgroundColor.ToHex() == "#9a9a9a" ||
-                    button.BackgroundColor.ToHex() == "#d3d6da")
-                {
-                    button.BackgroundColor = Color.FromArgb(theme.KeyboardButton);
-                    button.TextColor = Color.FromArgb(theme.KeyboardText);
-                }
+                await ResetGame();
+                return;
+            }
+
+            bool answer = await DisplayAlert("New Game",
+                "Are you sure you want to start a new game? Current progress will be lost.",
+                "Yes", "No");
+
+            if (answer)
+            {
+                await ResetGame();
             }
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            ApplyTheme();   
-        }
-
-      
     }
 }
