@@ -2,126 +2,150 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle_Project_.MainPage"
-             BackgroundColor="#252525">
+             BackgroundColor="#252525"
+             Title="">
 
-    <VerticalStackLayout Spacing="25" 
+    <VerticalStackLayout x:Name="mainLayout" Spacing="25" 
                         Padding="30,0" 
                         VerticalOptions="Center">
-        <Frame
-           BackgroundColor="#9a9a9a" 
-           CornerRadius="10" 
-           Padding="20,10" 
-           HorizontalOptions="Center"
-           BorderColor="#eeeeee">
-            <Label 
-            Text="WORDLE"
-            SemanticProperties.HeadingLevel="Level1"
+
+        <Button Text="⚙️" 
+            WidthRequest="60" 
+            HeightRequest="60" 
+            BackgroundColor="#252525" 
+            TextColor="#9a9a9a" 
+            FontSize="20" 
+            HorizontalOptions="Start" 
+            VerticalOptions="Start"
+            Clicked="Button_Clicked"/>
+
+        <Label 
+            Text="WORDLE" FontFamily="WordleFont"
             FontSize="32"
-            TextColor="#252525"
+            TextColor="#eeeeee"
             FontAttributes="Bold"
             HorizontalOptions="Center"/>
-        </Frame>
+        
 
         <!-- 5 x 6 grid where the user enters the word they are guessing -->
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+        <Grid x:Name="grid" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
               RowSpacing="5"
               HorizontalOptions="Center">
 
+            <!-- Row 1 -->
             <HorizontalStackLayout Grid.Row="0" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
+            <!-- Row 2 -->
             <HorizontalStackLayout Grid.Row="1" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
+            <!-- Row 3 -->
             <HorizontalStackLayout Grid.Row="2" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
+            <!-- Row 4 -->
             <HorizontalStackLayout Grid.Row="3" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
+            <!-- Row 5 -->
             <HorizontalStackLayout Grid.Row="4" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout Grid.Row="5" Spacing="5">
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
-                <Button WidthRequest="50" HeightRequest="50" BackgroundColor="#9a9a9a" BorderColor="#eeeeee" BorderWidth="2"/>
+            <!-- Row 6 -->
+            <HorizontalStackLayout  Grid.Row="5" Spacing="5">
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button WidthRequest="50" HeightRequest="50" TextColor="#eeeeee" BackgroundColor="#252525" BorderColor="#9a9a9a" BorderWidth="1.5" FontFamily="WordleFont" FontAttributes="Bold"/>
             </HorizontalStackLayout>
         </Grid>
 
         <!-- Keyboard -->
-        <Grid RowDefinitions="Auto,Auto,Auto"
+        <Grid x:Name="keyboardGrid" RowDefinitions="Auto,Auto,Auto"
               RowSpacing="5"
               HorizontalOptions="Center">
 
             <!-- Top Row Keyboard -->
-            <HorizontalStackLayout Grid.Row="0" Spacing="2">
-                <Button Text="Q" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="W" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="E" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="R" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="T" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="Y" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="U" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="I" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="O" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="P" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="0" Spacing="2">
+                <Button x:Name="btnQ" Text="Q" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnW" Text="W" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnE" Text="E" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnR" Text="R" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnT" Text="T" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnY" Text="Y" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnU" Text="U" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnI" Text="I" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnO" Text="O" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnP" Text="P" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
             </HorizontalStackLayout>
 
             <!-- Middle Row Keyboard -->
-            <HorizontalStackLayout Grid.Row="1" Spacing="2" Margin="15,0">
-                <Button Text="A" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="S" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="D" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="F" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="G" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="H" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="J" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="K" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="L" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="1" Spacing="2" Margin="15,0">
+                <Button x:Name="btnA" Text="A" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnS" Text="S" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnD" Text="D" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnF" Text="F" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnG" Text="G" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnH" Text="H" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnJ" Text="J" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnK" Text="K" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnL" Text="L" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525"  FontAttributes="Bold" FontFamily="WordleFont"/>
             </HorizontalStackLayout>
 
             <!-- Bottom Row Keyboard -->
-            <HorizontalStackLayout Grid.Row="2" Spacing="2">
-                <Button Text="ENTER" WidthRequest="70.001" HeightRequest="45" BackgroundColor="#9a9a9a"/>
-                <Button Text="Z" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="X" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="C" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="V" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="B" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="N" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="M" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
-                <Button Text="⌫" WidthRequest="65" HeightRequest="45"  BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="2" Spacing="2"> 
+                <Button x:Name="btnEnt" Text="ENTER" WidthRequest="75" HeightRequest="45" BackgroundColor="#9a9a9a" FontFamily="WordleFont" FontAttributes="Bold"/>
+                <Button x:Name="btnX" Text="X" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnC" Text="C" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnV" Text="V" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnB" Text="B" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnN" Text="N" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnM" Text="M" WidthRequest="35" HeightRequest="45" BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
+                <Button x:Name="btnDel" Text="⌫" WidthRequest="75" HeightRequest="45"  BackgroundColor="#9a9a9a" TextColor="#252525" FontAttributes="Bold" FontFamily="WordleFont"/>
             </HorizontalStackLayout>
         </Grid>
+
+        <!-- Replay Button
+        <Button Text="New Game" 
+        BackgroundColor="#9a9a9a" 
+        TextColor="#252525" 
+        FontAttributes="Bold" 
+        FontFamily="WordleFont"
+        Clicked="Button_Clicked_1"
+        HorizontalOptions="Center"
+        Margin="0,10,0,0"/> -->
+
+
 
     </VerticalStackLayout>
 </ContentPage>
 
+<!--Color Pallette https://www.color-hex.com/color-palette/1054322-->
+<!-- Font https://fonts.google.com/selection?categoryFilters=Feeling:%2FExpressive%2FCalm -->
