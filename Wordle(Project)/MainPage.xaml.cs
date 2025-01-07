@@ -9,41 +9,48 @@ namespace Wordle_Project_
         private int currentRow = 0;
         private int currentColumn = 0;
         private bool gameActive = true;
-        private Label debugLabel;
+        //private Label debugLabel;
 
+        //Timer
+        private bool hardMode = false;
+        private IDispatcherTimer gameTimer;
+        private const int GAME_TIME_SECONDS = 120;
+        private int remainingSeconds;
 
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = ThemeManager.Current;
             SetupDebugLabel();
             SetupKeyboardEvents();
+            InitializeTimer();
             Loaded += MainPage_Loaded;
         }
 
         //Debug so I can see what the word is for testing will be removed later
         private void SetupDebugLabel()
         {
-            debugLabel = new Label
-            {
-                Text = "Current Word: ",
-                TextColor = Color.FromArgb("#eeeeee"),
-                HorizontalOptions = LayoutOptions.Start,
-                Margin = new Thickness(10)
-            };
-            mainLayout.Children.Insert(0, debugLabel);
+            //debugLabel = new Label
+            //{
+                //Text = "Current Word: ",
+                //TextColor = Color.FromArgb("#eeeeee"),
+                //HorizontalOptions = LayoutOptions.Start,
+                //Margin = new Thickness(10)
+            //};
+            //mainLayout.Children.Insert(0, debugLabel);
         }
 
         //Gets the word from the WordService and sets the game to active
-        private async void MainPage_Loaded(object sender, EventArgs e)
-        {
+       private async void MainPage_Loaded(object sender, EventArgs e)
+       {
             await InitializeGame();
-        }
+       }
 
         private async Task InitializeGame()
         {
             currentWord = await WordService.GetRandomWord();
             gameActive = true;
-            debugLabel.Text = $"Current Word: {currentWord}";
+           // debugLabel.Text = $"Current Word: {currentWord}";
         }
 
         private void SetupKeyboardEvents()
@@ -95,6 +102,8 @@ namespace Wordle_Project_
             var button = (Button)stackLayout.Children[col];
             button.Text = letter;
         }
+
+
 
         //Checks the word and updates the colors of the buttons
         private async void CheckWord()
@@ -171,6 +180,7 @@ namespace Wordle_Project_
             );
         }
 
+        //Navigates to the settings page
         private async void OnSettingsButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new SettingsPage(), true);
@@ -191,6 +201,7 @@ namespace Wordle_Project_
                     button.Text = "";
                     button.BackgroundColor = Color.FromArgb("#121213");
                 }
+                
             }
 
             // Reset keyboard colors
@@ -202,6 +213,13 @@ namespace Wordle_Project_
                 }
             }
 
+            if (hardMode)
+                {
+                    remainingSeconds = GAME_TIME_SECONDS;
+                    UpdateTimerDisplay();
+                    gameTimer.Start();
+                }
+    
             // Get new word
             await InitializeGame();
         }
@@ -222,6 +240,54 @@ namespace Wordle_Project_
             {
                 await ResetGame();
             }
+
+
         }
+
+        //Timer
+        private void InitializeTimer()
+        {
+            gameTimer = Application.Current.Dispatcher.CreateTimer();
+            gameTimer.Interval = TimeSpan.FromSeconds(1);
+            gameTimer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            remainingSeconds--;
+            UpdateTimerDisplay();
+
+            if (remainingSeconds <= 0)
+            {
+                gameTimer.Stop();
+                HandleGameEnd(false);
+            }
+        }
+
+        private void UpdateTimerDisplay()
+        {
+            var minutes = remainingSeconds / 60;
+            var seconds = remainingSeconds % 60;
+            timerLabel.Text = $"{minutes:00}:{seconds:00}";
+        }
+
+        private void OnHardModeToggled(object sender, ToggledEventArgs e)
+        {
+            hardMode = e.Value;
+            timerLabel.IsVisible = hardMode;
+
+            if (hardMode)
+            {
+                remainingSeconds = GAME_TIME_SECONDS;
+                UpdateTimerDisplay();
+                gameTimer.Start();
+            }
+            else
+            {
+                gameTimer.Stop();
+            }
+        }
+
     }
 }
+
